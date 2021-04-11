@@ -7,21 +7,20 @@ const feedback = document.getElementById("feedback")
 
 //クイズの内容
 const quiz = {
-  text: "この星の名前は何でしょう？",
-  image: "Ganymede.jpg",
+  text: "これに勝てるじゃんけんの手は何でしょう？",
+  image: "Two.jpeg",
   choices: [
     {
-      text: "ゴリアテ",
-      feedback:
-        "残念！ゴリアテは、旧約聖書に登場するダビデに石で殺される巨人だよ。",
+      text: "パー",
+      feedback: "残念！パーだと負けちゃうよ。",
     },
     {
-      text: "ゼニガメ",
-      feedback: "残念！ゼニガメは、クサガメまたはニホンイシガメの幼体だよ。",
+      text: "チョキ",
+      feedback: "残念！チョキだとあいこになっちゃうよ。",
     },
     {
-      text: "ガニメデ",
-      feedback: "正解！ガニメデは、木星の第三惑星だよ！",
+      text: "グー",
+      feedback: "正解！グーだとチョキに勝つことができるよ！",
     },
   ],
 }
