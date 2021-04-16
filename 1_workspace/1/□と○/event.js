@@ -1,8 +1,8 @@
-const figure = document.getElementById("figure")
+const Figure = document.getElementById("figure")
 
-figure.onclick = function() {
-  figure.classList.toggle("rounded")
+Figure.onclick = function() {
+  Figure.classList.toggle("rounded")
 }
-figure.onmouseover = function() {
-  figure.classList.toggle("rounded")
+Figure.onmouseover = function() {
+  Figure.classList.toggle("rounded")
 }
