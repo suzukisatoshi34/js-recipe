@@ -1,0 +1,27 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ElementSample</title>
+  </head>
+  <body>
+    <!-- ① before -->
+    <div class="cards-container">
+      <!-- ② prepend -->
+      <div class="card">こんにちは</div>
+      <!-- ③ append -->
+    </div>
+    <!-- ④ after -->
+
+    <script>
+      const cardsContainer = document.getElementById("cards-container")
+
+      const card = document.createElement("div")
+      card.textContent = "おはよう"
+      card.className = "card"
+
+      cardsContainer.before(card)
+    </script>
+  </body>
+</html>
