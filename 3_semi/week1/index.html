@@ -7,7 +7,7 @@
   </head>
   <body>
     <!-- ① before -->
-    <div class="cards-container">
+    <div id="cards-container">
       <!-- ② prepend -->
       <div class="card">こんにちは</div>
       <!-- ③ append -->
@@ -21,7 +21,7 @@
       card.textContent = "おはよう"
       card.className = "card"
 
-      cardsContainer.before(card)
+      cardsContainer.prepend(card)
     </script>
   </body>
 </html>
