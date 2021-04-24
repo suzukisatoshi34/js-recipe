@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>メモ</h1>
+    <div>
+      <input id="memo-input" />
+      <button id="add-button">追加</button>
+      <div id="memo-container"></div>
+    </div>
+    <script>
+      const input = document.getElementById("memo-input")
+      const button = document.getElementById("add-button")
+      const memo = document.getElementById("memo-container")
+      let memos = []
+      console.log(memos)
+      for (let i = 0; i < memos.length; i++) {
+        const div = document.createElement("div")
+        div.className = "pokemonn"
+        div.textContent = memos[i]
+        memo.append(div)
+      }
+      button.onclick = function() {
+        const text = input.value
+        memos.push(text)
+        input.value = ""
+      }
+    </script>
+  </body>
+</html>
