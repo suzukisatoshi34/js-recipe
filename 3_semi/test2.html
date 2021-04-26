@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>メモ</h1>
+    <div>
+      <input id="memo-input" />
+      <button id="add-button">追加</button>
+      <button id="remove-button">削除</button>
+      <div id="memo-container"></div>
+    </div>
+    <script>
+      const input = document.getElementById("memo-input")
+      const button = document.getElementById("add-button")
+      const button2 = document.getElementById("remove-button")
+      const memo = document.getElementById("memo-container")
+      let memos = []
+      const toMorseCode = function(a) {
+        a.replaceAll("0", ".").replaceAll("1", "_")
+      }
+      if (localStorage.memo1) {
+        const memosJson = localStorage.memo1
+        memos = JSON.parse(memosJson)
+        for (let i = 0; i < memos.length; i++) {
+          const div = document.createElement("div")
+          div.className = "pokemonn"
+          div.textContent = toMorseCode(memo[i])
+          console.log(toMorseCode(memo[i]))
+          memo.append(div)
+        }
+      }
+      console.log(memos)
+      button.onclick = function() {
+        const text = input.value
+        memos.push(text)
+        input.value = ""
+        console.log(memos)
+        localStorage.memo1 = JSON.stringify(memos)
+        document.location.reload()
+      }
+      button2.onclick = function() {
+        let memos = []
+        localStorage.memo1 = JSON.stringify(memos)
+        document.location.reload()
+      }
+      a = "10100010"
+      console.log(a.replaceAll("1", "_").replaceAll("0", "."))
+      console.log(toMorseCode(a))
+
+      //function addAllNumbers(){}
+      String.prototype.split("-")
+    </script>
+  </body>
+</html>

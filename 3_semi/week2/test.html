@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>メモ</h1>
+    <div></div>
+    <script>
+      window.localStorage.text = "こんにti"
+      const text = window.localStorage.text
+      console.log(text)
+
+      localStorage.list = [1, 2, 3]
+      localStorage["list2"] = [1, 2, 3]
+      localStorage["list3"] = JSON.stringify([1, 2, 3])
+
+      const list3Json = localStorage.list3
+      const list3 = JSON.parse(list3Json)
+      console.log(list3)
+
+      function toMorseCode(a) {
+        a.replaceAll("0", ".").replaceAll("1", "_")
+      }
+      b = "10100010"
+      console.log(b.replaceAll("1", "_").replaceAll("0", "."))
+      console.log(toMorseCode(b))
+
+      //function addAllNumbers(){}
+      String.prototype.split("-")
+    </script>
+  </body>
+</html>
