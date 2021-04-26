@@ -21,7 +21,7 @@
       const memo = document.getElementById("memo-container")
       let memos = []
       const toMorseCode = function(a) {
-        a.replaceAll("0", ".").replaceAll("1", "_")
+        return a.replaceAll("0", ".").replaceAll("1", "_")
       }
       if (localStorage.memo1) {
         const memosJson = localStorage.memo1
