@@ -6,5 +6,5 @@ fetch("https://api.thecatapi.com/v1/images/search")
     return res.json() // 結果を json として読み込む
   })
   .then((data) => {
-    imageElement.src = data.message
+    imageElement.src = data.breeds
   })
