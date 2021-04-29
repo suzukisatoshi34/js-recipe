@@ -7,5 +7,5 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
   })
   .then((data) => {
     console.log(data)
-    imageElement.src = data.message // 画像を表示する
+    imageElement.src = data.drinks[0].strDrinkThumb // 画像を表示する
   })

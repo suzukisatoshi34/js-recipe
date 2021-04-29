@@ -8,7 +8,7 @@ const feedback = document.getElementById("feedback")
 //クイズの内容
 const quiz = {
   text: "自己紹介",
-  image: "IMG_3405.JPG",
+  image: "",
   choices: [
     {
       text: "名前は？",

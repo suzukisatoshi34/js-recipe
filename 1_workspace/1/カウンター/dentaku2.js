@@ -15,6 +15,7 @@ const multiButton = document.getElementById("×-button")
 const divButton = document.getElementById("÷-button")
 const equalButton = document.getElementById("=-button")
 let count = 0
+let a = ""
 
 // ボタン要素のonclickハンドラに関数を代入する
 
@@ -76,39 +77,80 @@ plus0Button.onclick = function() {
   count = count * 10 + 0
   display.textContent = count
 }
+equalButton.onclick = function() {
+  equal()
+}
 plusButton.onclick = function() {
-  count1 = count
-  count = 0
-  display.textContent = count1 + "+"
-  equalButton.onclick = function() {
-    count = count + count1
-    display.textContent = count
+  if (a === "") {
+    count1 = count
+    count = 0
+    a = "+"
+    display.textContent = count1 + "+"
+  } else {
+    equal()
+    a = "+"
   }
 }
 minusButton.onclick = function() {
-  count1 = count
-  count = 0
-  display.textContent = count1 + "-"
-  equalButton.onclick = function() {
-    count = count1 - count
-    display.textContent = count
+  if (a === "") {
+    count1 = count
+    count = 0
+    a = "-"
+    display.textContent = count1 + "-"
+  } else {
+    equal()
+    a = "-"
   }
 }
 multiButton.onclick = function() {
-  count1 = count
-  count = 0
-  display.textContent = count1 + "×"
-  equalButton.onclick = function() {
-    count = count1 * count
-    display.textContent = count
+  if (a === "") {
+    count1 = count
+    count = 0
+    a = "*"
+    display.textContent = count1 + "×"
+  } else {
+    equal()
+    a = "*"
   }
 }
 divButton.onclick = function() {
-  count1 = count
-  count = 0
-  display.textContent = count1 + "÷"
-  equalButton.onclick = function() {
-    count = count1 / count
-    display.textContent = count
+  if (a === "") {
+    count1 = count
+    count = 0
+    a = "/"
+    display.textContent = count1 + "÷"
+  } else {
+    equal()
+    a = "/"
   }
+}
+function equal() {
+  if (a === "+") {
+    let wa = count + count1
+    count1 = wa
+    display.textContent = wa
+    a = ""
+    count = 0
+  } else if (a === "-") {
+    let sa = count1 - count
+    count1 = sa
+    display.textContent = sa
+    a = ""
+    count = 0
+  } else if (a === "*") {
+    seki = count * count1
+    count1 = seki
+    display.textContent = seki
+    a = ""
+    count = 0
+  } else {
+    syou = count1 / count
+    count1 = syou
+    display.textContent = syou
+    a = ""
+    count = 0
+  }
+}
+equalButton.onclick = function() {
+  equal()
 }
