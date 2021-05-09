@@ -1,0 +1,12 @@
+section {
+  margin: 1rem;
+  padding: 1rem;
+  border: solid 1px black;
+}
+div {
+  margin-top: 0.5rem;
+}
+
+input {
+  width: 30rem;
+}
