@@ -18,14 +18,17 @@
         <div class="cards-container">
           <!-- WORKで編集するのはここから👇 -->
           <div class="card" v-for="(todo,index) in list">
-            <input
-              type="checkbox"
-              v-model="list.isDone,index"
-              v-on:click="checks(index)"
-              value="true"
-            />
-            <div class="text">
-              {{todo.text,index}}
+            <input type="checkbox" v-model="todo.isDone" />
+            <!-- v-ifで書いたバージョン
+              <div class="text" v-if="todo.isDone===false">
+              {{ todo.text }}
+            </div>
+            <div style="text-decoration: line-through;" v-if="todo.isDone">
+              {{ todo.text }}
+            </div> -->
+            <!-- v-bindで書きかえた -->
+            <div v-bind:class="{text:todo.isDone===false,done:todo.isDone}">
+              {{todo.text}}
             </div>
             <div class="delete" v-on:click="deleteTodo(index)"></div>
           </div>
@@ -69,9 +72,6 @@
           },
           deleteTodo(index) {
             this.list.splice(index, 1)
-          },
-          checks(index) {
-            this.isDone, (index = true)
           },
         },
       })
