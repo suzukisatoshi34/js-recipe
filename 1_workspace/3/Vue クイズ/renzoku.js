@@ -2,10 +2,32 @@ new Vue({
   el: "#app",
   data: {
     feedback: "",
-    n: 0,
     next: "正解しないと次の問題に進めないよ",
     quiz: {
-      text: "この星の名前は何でしょう？",
+      text: "1この星の名前は何でしょう？",
+      image: "Ganymede.jpg",
+      choices: [
+        {
+          text: "ゴリアテ",
+          isCorrect: false,
+          feedback:
+            "残念！ゴリアテは、旧約聖書に登場するダビデに石で殺される巨人だよ。",
+        },
+        {
+          text: "ゼニガメ",
+          isCorrect: false,
+          feedback:
+            "残念！ゼニガメは、クサガメまたはニホンイシガメの幼体だよ。",
+        },
+        {
+          text: "ガニメデ",
+          isCorrect: true,
+          feedback: "正解！ガニメデは、木星の第三惑星だよ！",
+        },
+      ],
+    },
+    originalquiz: {
+      text: "1この星の名前は何でしょう？",
       image: "Ganymede.jpg",
       choices: [
         {
@@ -28,7 +50,7 @@ new Vue({
       ],
     },
     nextquiz1: {
-      text: "この城は何という城でしょう？",
+      text: "2この城は何という城でしょう？",
       image: "Maruoka.png",
       choices: [
         {
@@ -54,7 +76,7 @@ new Vue({
       ],
     },
     nextquiz2: {
-      text: "これに勝てるじゃんけんの手は何でしょう？",
+      text: "3これに勝てるじゃんけんの手は何でしょう？",
       image: "Two.jpeg",
       choices: [
         {
@@ -90,6 +112,7 @@ new Vue({
         if (this.quiz === this.nextquiz1) {
           this.quiz = this.nextquiz2
         } else if (this.quiz === this.nextquiz2) {
+          this.quiz = this.originalquiz
         } else {
           this.quiz = this.nextquiz1
         }
